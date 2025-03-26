@@ -17,7 +17,7 @@ A GitHub code scanner that mimics GitHub's search bar exactly. Designed for accu
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/YourUserName/gitsnipe.git
+   git clone https://github.com/5u5urrus/gitsnipe.git
    ```
 2. **Install Python 3.6+ and Requests**:
    ```bash
