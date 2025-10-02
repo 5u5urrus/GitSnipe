@@ -131,7 +131,7 @@ Licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## Author
 
-Created by [Vahe Demirkhanyan](mailto:vdemirkhanyan@yahoo.ca)
+Created by [Vahe Demirkhanyan](mailto:vahe@hackvector.io)
 
 <p align="center">
   <strong>Snipe secrets before attackers do - GitSnipe, your first line of defense.</strong>
