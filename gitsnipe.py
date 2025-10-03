@@ -7,8 +7,9 @@ import requests
 GITHUB_TOKEN = "<enter your github api key here>"
 
 def search_github_code(query, max_pages=1):
+    # Use text-match media type to get code fragments back
     headers = {
-        "Accept": "application/vnd.github.v3+json",
+        "Accept": "application/vnd.github.v3.text-match+json",
         "Authorization": f"token {GITHUB_TOKEN}"
     }
     results = []
@@ -151,6 +152,16 @@ def main():
         html_url = m.get("html_url", "no_url")
         print(f" - {repo} :: {path}")
         print(f"   {html_url}")
+        # NEW: show code fragments returned by text-match API for fast triage
+        tms = m.get("text_matches", [])
+        for tm in tms:
+            frag = tm.get("fragment", "")
+            if frag:
+                frag_indented = ("     " + frag.strip().replace("\n", "\n     "))
+                print("   >>> Match fragment:")
+                print(frag_indented)
+        if tms:
+            print()  # spacing after fragments
 
 if __name__ == "__main__":
     main()
